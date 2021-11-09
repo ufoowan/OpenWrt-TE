@@ -13,5 +13,11 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.4/g' package/base-files/files/bin/config_generate
 
-# Modify default hostname
+# Modify hostname
 sed -i "s/hostname='OpenWrt'/hostname='P2W-R619AC'/g" package/base-files/files/bin/config_generate
+
+# Modify the version number
+sed -i "s/OpenWrt /LC18 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+
+# Modify default theme
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
