@@ -12,3 +12,6 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.4/g' package/base-files/files/bin/config_generate
+
+# Modify default hostname
+sed -i "s/hostname='OpenWrt'/hostname='P2W-R619AC'/g" package/base-files/files/bin/config_generate
