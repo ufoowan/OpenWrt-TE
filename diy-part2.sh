@@ -20,10 +20,10 @@ git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 sed -i 's/192.168.1.1/192.168.1.4/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
-sed -i "s/hostname='OpenWrt'/hostname='P2W-R619AC'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='OpenWrt'/hostname='Test'/g" package/base-files/files/bin/config_generate
 
 # Modify the version number
-sed -i "s/OpenWrt /LC18 build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /LCsub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
