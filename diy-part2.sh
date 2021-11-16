@@ -17,7 +17,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.4/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
 sed -i "s/hostname='OpenWrt'/hostname='Test'/g" package/base-files/files/bin/config_generate
