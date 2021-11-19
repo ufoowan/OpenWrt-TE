@@ -9,6 +9,7 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
+
 # Extra package
 #git clone https://github.com/kenzok8/small.git package/small
 rm -rf package/lean/luci-theme-argon
@@ -17,10 +18,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
-sed -i "s/hostname='OpenWrt'/hostname='Test'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='OpenWrt'/hostname='TEST'/g" package/base-files/files/bin/config_generate
 
 # Modify the version number
 sed -i "s/OpenWrt /LCsub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
