@@ -12,6 +12,8 @@
 
 # Extra package
 #git clone https://github.com/kenzok8/small.git package/small
+git clone https://github.com/kenzok8/jell/tree/main/luci-app-syncthing.git package/luci-app-syncthing
+git clone https://github.com/linkease/istore/tree/main/luci/luci-app-store.git package/luci-app-store
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
@@ -21,7 +23,7 @@ git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
-sed -i "s/hostname='OpenWrt'/hostname='TEST'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='OpenWrt'/hostname='PBR-M1'/g" package/base-files/files/bin/config_generate
 
 # Modify the version number
 sed -i "s/OpenWrt /LCsub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
