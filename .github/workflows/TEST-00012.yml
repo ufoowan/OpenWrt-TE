@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: TEST-00011
+name: TEST-00012
 
 on:
   repository_dispatch:
