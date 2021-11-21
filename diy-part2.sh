@@ -12,8 +12,8 @@
 
 # Extra package
 #git clone https://github.com/kenzok8/small.git package/small
-git clone https://github.com/kenzok8/jell/tree/main/luci-app-syncthing.git package/luci-app-syncthing
-git clone https://github.com/linkease/istore/tree/main/luci/luci-app-store.git package/luci-app-store
+svn co https://github.com/kenzok8/jell/trunk/luci-app-syncthing package/luci-app-syncthing
+svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
