@@ -12,16 +12,17 @@
 
 # Extra package
 #git clone https://github.com/kenzok8/small.git package/small
-svn co https://github.com/kenzok8/jell/trunk/luci-app-syncthing package/luci-app-syncthing
-svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
-svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
+svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav package/gowebdav
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman package/luci-app-diskman
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-gowebdav package/luci-app-gowebdav
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-syncthing package/luci-app-syncthing
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
 sed -i "s/hostname='OpenWrt'/hostname='PBR-M1'/g" package/base-files/files/bin/config_generate
