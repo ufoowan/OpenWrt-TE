@@ -18,6 +18,7 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant 
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-gowebdav package/luci-app-gowebdav
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-syncthing package/luci-app-syncthing
+svn co https://github.com/openwrt/openwrt/trunk/package/kernel/mt76 package/mt76
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
