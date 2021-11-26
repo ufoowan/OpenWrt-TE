@@ -20,6 +20,7 @@ popd
 # Extra package
 mkdir package/lcsub
 pushd package/lcsub
+svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
 svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
