@@ -11,15 +11,15 @@
 #
 
 # Passwall
-mkdir passwall
-pushd passwall
+mkdir package/passwall
+pushd package/passwall
 #git clone --depth=1 https://github.com/kenzok8/small.git
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
 popd
 
 # Extra package
-mkdir lcsub
-pushd lcsub
+mkdir package/lcsub
+pushd package/lcsub
 svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
@@ -36,7 +36,7 @@ popd
 
 # Theme
 rm -rf package/lean/luci-theme-argon
-pushd package
+pushd package/lcsub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
