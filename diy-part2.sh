@@ -56,4 +56,4 @@ sed -i "s/OpenWrt /LCsub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packag
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Test
-wget -nv https://github.com/lc-sub/LCsub-OpenWrt-TE/raw/main/dts -O target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
+wget -nv https://github.com/lc-sub/LCsub-OpenWrt-TE/raw/main/dts1 -O target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
