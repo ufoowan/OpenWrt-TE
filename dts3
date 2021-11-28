@@ -78,6 +78,12 @@
 			gpio-export,output = <1>;
 			gpios = <&gpio 25 GPIO_ACTIVE_HIGH>;
 		};
+
+		power_sata {
+			gpio-export,name = "power_sata";
+			gpio-export,output = <1>;
+			gpios = <&gpio 27 GPIO_ACTIVE_HIGH>;
+		};
 	};
 };
 
