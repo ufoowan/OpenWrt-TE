@@ -18,6 +18,7 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
 popd
 
 # Extra package
+rm -rf package/lean/luci-app-diskman
 mkdir package/lcsub
 pushd package/lcsub
 svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
@@ -41,6 +42,7 @@ pushd package/lcsub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
+svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter
 popd
 
 # Modify default IP
