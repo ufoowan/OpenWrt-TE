@@ -21,6 +21,7 @@ popd
 rm -rf package/lean/luci-app-diskman
 mkdir package/lcsub
 pushd package/lcsub
+git clone https://github.com/jerrykuku/luci-app-ttnode.git
 svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
 svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
@@ -42,7 +43,8 @@ pushd package/lcsub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
-svn co https://github.com/sirpdboy/build/trunk/luci-theme-darkmatter
+svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter
+find luci-theme-darkmatter -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
 popd
 
 # Modify default IP
