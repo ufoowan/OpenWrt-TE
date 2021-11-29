@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: TEST-3-0010
+name: TEST-3-0011
 
 on:
   repository_dispatch:
@@ -26,7 +26,7 @@ env:
   CONFIG_FILE: 3.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  DTS_SH: dts3.sh
+  DTS_SH: dts2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
