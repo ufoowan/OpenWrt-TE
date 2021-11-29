@@ -21,6 +21,11 @@
 	leds {
 		compatible = "gpio-leds";
 
+		buzzer {
+			label = "pbr-m1:buzzer";
+			gpios = <&gpio 26 GPIO_ACTIVE_HIGH>;
+		};
+
 		power {
 			label = "blue:power";
 			gpios = <&gpio 31 GPIO_ACTIVE_LOW>;
