@@ -42,7 +42,8 @@ pushd package/lcsub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
-svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter
+git clone https://github.com/apollo-ng/luci-theme-darkmatter.git
+#svn co https://github.com/sirpdboy/build/trunk/luci-theme-darkmatter
 popd
 
 # Modify default IP
