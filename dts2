@@ -23,7 +23,7 @@
 
 		buzzer {
 			label = "buzzer:sata";
-			gpios = <&gpio 26 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
 		};
 
 		power {
