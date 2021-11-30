@@ -61,4 +61,4 @@ sed -i "s/OpenWrt /LCsub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packag
 
 # hotfix
 rm -rf package/libs/wolfssl
-svn co https://github.com/coolsnowwolf/lede/package/libs/wolfssl/tags/20211107 package/libs/wolfssl
+svn co https://github.com/coolsnowwolf/lede/tags/20211107/package/libs/wolfssl package/libs/wolfssl
