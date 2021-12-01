@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: TEST-3-0011
+name: TEST-3-0020
 
 on:
   repository_dispatch:
@@ -26,7 +26,6 @@ env:
   CONFIG_FILE: 3.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  DTS_SH: dts2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
@@ -80,10 +79,8 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        chmod +x $DTS_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        $GITHUB_WORKSPACE/$DTS_SH
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
