@@ -21,11 +21,6 @@
 	leds {
 		compatible = "gpio-leds";
 
-		buzzer {
-			label = "buzzer:sata";
-			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
-		};
-
 		power {
 			label = "blue:power";
 			gpios = <&gpio 31 GPIO_ACTIVE_LOW>;
@@ -50,6 +45,11 @@
 		wlan5g {
 			label = "blue:wlan5g";
 			gpios = <&gpio 28 GPIO_ACTIVE_LOW>;
+		};
+
+		buzzer {
+			label = "buzzer:sata";
+			gpios = <&gpio 26 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
