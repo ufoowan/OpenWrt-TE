@@ -46,10 +46,10 @@
 			label = "blue:wlan5g";
 			gpios = <&gpio 33 GPIO_ACTIVE_LOW>;
 		};
-		
+
 		buzzer {
 			label = "buzzer:sata";
-			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio 26 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
