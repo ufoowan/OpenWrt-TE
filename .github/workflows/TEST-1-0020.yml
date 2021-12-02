@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: TEST-1-0011
+name: TEST-1-0020
 
 on:
   repository_dispatch:
@@ -23,10 +23,10 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 1.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
-  DTS_SH: dts1.sh
+  CONFIG_FILE: TEST-1/.config
+  DIY_P1_SH: diy.sh
+  DIY_P2_SH: TEST-1/lcsub.sh
+  DTS_SH: TEST-1/dts.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
