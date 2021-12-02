@@ -50,5 +50,5 @@ sed -i "s/OpenWrt /lc-sub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # hotfix
-rm -rf package/libs/wolfssl
-svn co https://github.com/coolsnowwolf/lede/tags/20211107/package/libs/wolfssl package/libs/wolfssl
+#rm -rf package/libs/wolfssl
+#svn co https://github.com/coolsnowwolf/lede/tags/20211107/package/libs/wolfssl package/libs/wolfssl
