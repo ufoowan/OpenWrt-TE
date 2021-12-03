@@ -1,3 +1,13 @@
-- name: Clean Workspace
-  uses: AutoModality/action-clean@v1.1.0
-  
+name: Clean Workspace
+
+on:
+  push:
+    branches-ignore:
+      - master
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: AutoModality/action-clean@v1.1.0
+      - uses: actions/checkout@v2
+      - run: echo Hello World
