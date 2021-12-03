@@ -5,13 +5,23 @@ mkdir package/passwall
 pushd package/passwall
 #git clone --depth=1 https://github.com/kenzok8/small.git
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/model/cbi/passwall/server/*.lua
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/app_update/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/global/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/haproxy/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/log/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/node_list/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/rule/*.htm
+sed -i 's/services/vpn/g' luci-app-passwall/luasrc/view/passwall/server/*.htm
 popd
 
 # Extra package
 rm -rf package/lean/luci-app-diskman
 mkdir package/lcsub
 pushd package/lcsub
-git clone https://github.com/jerrykuku/luci-app-ttnode.git
 svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
 svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
@@ -50,5 +60,3 @@ sed -i "s/OpenWrt /lc-sub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # hotfix
-#rm -rf package/libs/wolfssl
-#svn co https://github.com/coolsnowwolf/lede/tags/20211107/package/libs/wolfssl package/libs/wolfssl
