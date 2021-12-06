@@ -137,6 +137,7 @@ ramips_setup_macs()
 		lan_mac=$wan_mac
 		;;
 	d-team,newifi-d2|\
+	d-team,pbr-m1|\
 	phicomm,k2p|\
 	xiaomi,mi-router-ac2100|\
 	xiaomi,redmi-router-ac2100)
