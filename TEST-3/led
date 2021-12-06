@@ -28,7 +28,7 @@ jcg,y2)
 	ucidef_set_led_netdev "internet" "internet" "blue:internet" "wan"
 	;;
 xzwifi,creativebox-v1)
-	ucidef_set_led_netdev "internet" "internet" "blue:internet" "br-lan"
+	ucidef_set_led_switch "internet" "internet" "blue:internet" "switch0" "0x10"
 	ucidef_set_led_netdev "wlan2g" "WiFi4" "blue:wlan2g" "ra0"
 	ucidef_set_led_netdev "wlan5g" "WiFi5" "blue:wlan5g" "rai0"
 	;;
