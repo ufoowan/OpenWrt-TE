@@ -21,8 +21,8 @@ popd
 # Extra package
 rm -rf feeds/packages/utils/syncthing
 rm -rf package/lean/luci-app-diskman
-mkdir package/lcsub
-pushd package/lcsub
+mkdir package/lc-sub
+pushd package/lc-sub
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gowebdav
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/syncthing
@@ -35,7 +35,7 @@ popd
 # Theme
 rm -rf feeds/luci/themes/luci-theme-material
 rm -rf package/lean/luci-theme-argon
-pushd package/lcsub
+pushd package/lc-sub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
@@ -47,8 +47,8 @@ popd
 sed -i 's/\"services\"/\"nas\"/g' package/lean/luci-app-samba4/luasrc/controller/samba4.lua
 
 # Modify Makefile
-find package/lcsub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
-find package/lcsub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
+find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
+find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
