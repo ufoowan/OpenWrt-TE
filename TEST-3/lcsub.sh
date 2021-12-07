@@ -19,19 +19,6 @@ sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwal
 popd
 
 # Extra package
-rm -rf package/lean/luci-app-diskman
-mkdir package/lcsub
-pushd package/lcsub
-svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
-svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filebrowser
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-gowebdav
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-syncthing
-popd
-
-# Extra package
 rm -rf feeds/packages/utils/syncthing
 rm -rf package/lean/luci-app-diskman
 mkdir package/lc-sub
