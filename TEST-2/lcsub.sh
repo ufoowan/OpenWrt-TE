@@ -19,33 +19,36 @@ sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwal
 popd
 
 # Extra package
+rm -rf feeds/packages/utils/syncthing
 rm -rf package/lean/luci-app-diskman
 mkdir package/lcsub
 pushd package/lcsub
-svn co https://github.com/kiddin9/openwrt-packages/trunk/filebrowser
-svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-filebrowser
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-gowebdav
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-syncthing
-popd
-
-# Use snapshots' syncthing package
-pushd feeds/packages/utils
-rm -rf syncthing
-svn co https://github.com/openwrt/packages/trunk/utils/syncthing
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gowebdav
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/syncthing
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-diskman
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-filebrowser
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-gowebdav
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-syncthing
 popd
 
 # Theme
+rm -rf feeds/luci/themes/luci-theme-material
 rm -rf package/lean/luci-theme-argon
 pushd package/lcsub
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/kiddin9/luci-theme-edge.git
-svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk/luci/themes/luci-theme-darkmatter
-find luci-theme-darkmatter -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/themes/luci-theme-darkmatter
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/themes/luci-theme-material
 popd
+
+# Modify Menu
+sed -i 's/\"services\"/\"nas\"/g' package/lean/luci-app-samba4/luasrc/controller/samba4.lua
+
+# Modify Makefile
+find package/lcsub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
+find package/lcsub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
