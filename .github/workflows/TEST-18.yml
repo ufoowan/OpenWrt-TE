@@ -25,7 +25,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: TEST-18/.config
   P1_SH: .patch/p1.sh
-  P2_SH: .patch/p1.sh
+  P2_SH: .patch/p2.sh
   CU_SH: TEST-18/customize.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
