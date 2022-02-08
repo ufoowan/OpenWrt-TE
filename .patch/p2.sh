@@ -51,3 +51,8 @@ find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\
 find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 
 # HotFix
+rm -rf package/utils/ucode
+mkdir package/hotfix
+pushd package/hotfix
+svn co https://github.com/openwrt/openwrt/trunk/package/utils/ucode
+popd
