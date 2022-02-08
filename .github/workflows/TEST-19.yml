@@ -26,7 +26,7 @@ env:
   CONFIG_FILE: TEST-19/.config
   P1_SH: .patch/p1.sh
   P2_SH: .patch/p2.sh
-  CU_SH: TEST-18/customize.sh
+  CU_SH: TEST-19/customize.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
