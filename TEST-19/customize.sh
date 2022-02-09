@@ -13,7 +13,7 @@ sed -i "s/OpenWrt /lc-sub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Device exclusive
-svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/dts16 target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
+svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/dts32 target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
 svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/leds target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
 svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/mk16 target/linux/ramips/image/mt7621.mk
+svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/TEST-19/mk32 target/linux/ramips/image/mt7621.mk
