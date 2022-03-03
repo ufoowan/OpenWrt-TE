@@ -20,7 +20,7 @@ popd
 
 # Extra package
 rm -rf feeds/packages/utils/syncthing
-rm -rf package/lean/luci-app-diskman
+rm -rf feeds/luci/applications/luci-app-diskman
 mkdir package/lc-sub
 pushd package/lc-sub
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gowebdav
@@ -34,7 +34,7 @@ popd
 
 # Theme
 rm -rf feeds/luci/themes/luci-theme-material
-rm -rf package/lean/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
 pushd package/lc-sub
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
@@ -44,15 +44,10 @@ svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/themes/luci-th
 popd
 
 # Modify Menu
-sed -i 's/\"services\"/\"nas\"/g' package/lean/luci-app-samba4/luasrc/controller/samba4.lua
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/samba4.lua
 
 # Modify Makefile
 find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
 find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 
 # HotFix
-# rm -rf package/utils/ucode
-# mkdir package/hotfix
-# pushd package/hotfix
-# svn co https://github.com/openwrt/openwrt/trunk/package/utils/ucode
-# popd
