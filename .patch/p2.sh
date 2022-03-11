@@ -5,6 +5,7 @@ mkdir package/passwall
 pushd package/passwall
 #git clone --depth=1 https://github.com/kenzok8/small.git
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall openwrt-passwall/luci-app-passwall
 sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
 sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
