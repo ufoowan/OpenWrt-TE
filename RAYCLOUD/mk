@@ -473,7 +473,7 @@ define Device/d-team_pbr-m1
   IMAGE_SIZE := 32448k
   DEVICE_VENDOR := PandoraBox
   DEVICE_MODEL := PBR-M1
-  DEVICE_PACKAGES := kmod-ata-ahci kmod-mt7603e kmod-mt76x2e kmod-sdhci-mt7620 \
+  DEVICE_PACKAGES := kmod-ata-ahci kmod-mt7603 kmod-mt76x2 kmod-sdhci-mt7620 \
 	kmod-usb3 kmod-usb-ledtrig-usbport luci-app-mtwifi -wpad-openssl
   SUPPORTED_DEVICES += pbr-m1
 endef
