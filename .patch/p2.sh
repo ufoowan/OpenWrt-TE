@@ -98,10 +98,10 @@ rm -rf feeds/luci/applications/luci-app-diskman
 rm -rf feeds/luci/applications/luci-app-hd-idle
 mkdir package/lc-sub
 pushd package/lc-sub
-svn co https://github.com/immortalwrt/packages/tree/openwrt-18.06/net/ddns-scripts
-svn co https://github.com/immortalwrt/packages/tree/openwrt-18.06/net/gowebdav
-svn co https://github.com/immortalwrt/packages/tree/openwrt-18.06/utils/filebrowser
-svn co https://github.com/immortalwrt/packages/tree/openwrt-18.06/utils/syncthing
+svn co https://github.com/immortalwrt/packages/tree/master/net/ddns-scripts
+svn co https://github.com/immortalwrt/packages/tree/master/net/gowebdav
+svn co https://github.com/immortalwrt/packages/tree/master/utils/filebrowser
+svn co https://github.com/immortalwrt/packages/tree/master/utils/syncthing
 svn co https://github.com/immortalwrt/luci/tree/master/applications/luci-app-diskman
 svn co https://github.com/immortalwrt/luci/tree/master/applications/luci-app-filebrowser
 svn co https://github.com/immortalwrt/luci/tree/master/applications/luci-app-gowebdav
@@ -114,8 +114,8 @@ rm -rf feeds/luci/themes/luci-theme-material
 rm -rf feeds/luci/themes/luci-theme-argon
 pushd package/lc-sub
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-git clone -b 18.06 https://github.com/kiddin9/luci-theme-edge.git
+git clone https://github.com/jerrykuku/luci-theme-argon.git
+git clone https://github.com/kiddin9/luci-theme-edge.git
 svn co https://github.com/immortalwrt/luci/tree/openwrt-18.06/themes/luci-theme-darkmatter
 svn co https://github.com/immortalwrt/luci/tree/openwrt-18.06/themes/luci-theme-material
 popd
